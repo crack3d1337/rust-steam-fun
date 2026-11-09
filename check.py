@@ -10,7 +10,8 @@ STEAM_API = os.environ["STEAM_API_KEY"]
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["ADMIN_ID"]
 STEAM_IDS = [s.strip() for s in os.environ["STEAM_IDS"].split(",") if s.strip()]
-RUST_APPID = "252490"
+#RUST_APPID = "252490"
+RUST_APPID = "570"
 STATE = Path("state.json")
 
 
