@@ -37,7 +37,7 @@ def send(text: str) -> None:
 
 def main() -> None:
     if not STEAM_IDS:
-        print("List empty")
+        print("List empty(git)")
         return
 
     old = json.loads(STATE.read_text()) if STATE.exists() else None
@@ -47,7 +47,7 @@ def main() -> None:
     try:
         players = fetch_players()
     except Exception as e:
-        print("Steam unavailable:", type(e).__name__)
+        print("Steam unavailable(git):", type(e).__name__)
         return
 
     for p in players:
@@ -55,8 +55,8 @@ def main() -> None:
         in_rust = p.get("gameid") == RUST_APPID
         if old is not None and key in old and old[key] != in_rust:
             messages.append(
-                f"🟢 {p['personaname']} in Rust" if in_rust
-                else f"🔴 {p['personaname']} out of Rust"
+                f"🟢 {p['personaname']} in Rust(git)" if in_rust
+                else f"🔴 {p['personaname']} out of Rust (git)"
             )
         new[key] = in_rust
 
@@ -64,7 +64,7 @@ def main() -> None:
         for m in messages:
             send(m)
     except Exception as e:
-        print("No messages to Telegram:", type(e).__name__)
+        print("No messages to Telegram:(git)", type(e).__name__)
         return
 
     STATE.write_text(json.dumps(new))
